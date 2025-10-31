@@ -13,9 +13,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the app
 COPY . .
 
-# Expose the port
+# Set environment variable for Flask port
 ENV PORT=8080
 EXPOSE 8080
 
-# Run the app using gunicorn (production server)
+# Run the app using Gunicorn (production-grade WSGI server)
 CMD exec gunicorn --bind :$PORT app:app
